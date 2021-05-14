@@ -1,8 +1,6 @@
 # Vizion
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/vizion`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Vizion is a ruby gem client library for talking to [VIZION API](https://docs.vizionapi.com/)
 
 ## Installation
 
@@ -22,14 +20,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You'll need to generate an api key: [https://vizionapi.com/sign-up](https://vizionapi.com/sign-up).   
+Initialize client and making request:
 
-## Development
+``` ruby
+client = Vizion::Client.new("X-API-Key")
+client.carriers
+```
+## List of methods
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### Carriers
+List of all supported carriers, to view the list [click here](https://www.notion.so/afa65e3d79fb4a33bc5ce5c331576668?v=a7543be9963441b8aa1ad33962774b85).   
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+client.carriers
+```
 
+### References
+
+```ruby
+client.all_references
+client.create_reference
+client.reference(id)
+client.reference_updates(id)
+client.delete_reference(id)
+```
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/vizion. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
