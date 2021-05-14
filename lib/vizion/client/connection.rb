@@ -1,6 +1,6 @@
 module Vizion
   class Client
-    module connection
+    module Connection
 
       def get(path, options = {})
         request :get, path, options
