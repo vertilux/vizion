@@ -10,7 +10,7 @@ module Vizion
     include Vizion::Client::Carriers
     include Vizion::Client::References
 
-    base_uri "https://demo.vizionapi.com"
+    base_uri "https://prod.vizionapi.com"
     format :json
 
     def initialize(api_key = nil)
