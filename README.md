@@ -32,11 +32,15 @@ client.carriers
 ### Carriers
 List of all supported carriers, to view the list [click here](https://www.notion.so/afa65e3d79fb4a33bc5ce5c331576668?v=a7543be9963441b8aa1ad33962774b85).   
 
+Actions supported:   
+
 ```ruby
 client.carriers
 ```
 
 ### References
+
+Actions supported:   
 
 ```ruby
 client.all_references
@@ -45,6 +49,18 @@ client.reference(id)
 client.reference_updates(id)
 client.delete_reference(id)
 ```
+
+For the create_reference action include request body:
+
+```json
+{
+    "container_id": "CMAU4049810",
+    "scac": "CMAU",
+    "callback_url": "https://yourdomain.com/webhook"
+}
+```
+If no callback_url parameter is provided, you will need to fetch status updates from the reference_updates action.   
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/vizion. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
