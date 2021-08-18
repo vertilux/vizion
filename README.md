@@ -24,9 +24,20 @@ You'll need to generate an api key: [https://vizionapi.com/sign-up](https://vizi
 Initialize client and making request:
 
 ``` ruby
-client = Vizion::Client.new("X-API-Key")
+require 'vizion'
+client = Vizion::Client.new(api_key: "X-API-Key")
 client.carriers
 ```
+
+### Timeouts
+
+You may also set timeout on the client.
+
+```ruby 
+require 'vizion'
+client = Vtxkit::Client.new(api_key: "X-API-Key", timeout: 10, # response timeout in seconds)
+```
+
 ## List of methods
 
 ### Carriers
@@ -63,7 +74,7 @@ If no callback_url parameter is provided, you will need to fetch status updates 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/vizion. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/vertilux/vizion. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -71,4 +82,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Vizion project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/vizion/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Vizion project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/vertilux/vizion/blob/master/CODE_OF_CONDUCT.md).
