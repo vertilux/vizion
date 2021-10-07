@@ -1,0 +1,112 @@
+#+TITLE: Vizion
+#+AUTHOR: Jose Perez
+#+EMAIL: jose.perez@vertilux.com
+#+EXPORT_FILE_NAME: ./docs/index.html
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css">
+#+OPTIONS: num:nil
+
+Vizion is a ruby gem client library for talking to [[https://docs.vizionapi.com][VIZION API]] built using OpenStruct so you can easily access data in a Ruby-ish way.
+
+[[https://badge.fury.io/rb/vizion.svg]]
+
+** Installation
+
+Add this line to your application's Gemfile:
+#+begin_src ruby
+gem 'vizion'
+#+end_src
+
+And then execute:
+#+begin_src bash
+bundle
+#+end_src
+
+Or install it yourself as:
+#+begin_src ruby
+gem install vizion
+#+end_src
+
+** Usage
+You'll need to generate an api key: [[https://vizionapi.com/sign-up][https://vizionapi.com/sign-up]]
+Initialize client and making request:
+
+#+begin_src ruby
+require 'vizion'
+client = Vizion::Client.new(api_key: "X-API-Key", timeout: 10)
+client.carriers
+#+end_src
+
+** Resources
+
+*** Carriers
+List of all supported carriers, to view the list [[https://www.notion.so/vizionapi/afa65e3d79fb4a33bc5ce5c331576668?v=a7543be9963441b8aa1ad33962774b85][click here]].
+
+*Actions supported*:
+#+begin_src ruby
+client.carriers.list
+#+end_src
+
+*** References
+
+*Actions supported*:
+#+begin_src ruby
+client.references.list
+client.references.retrieve(id)
+client.references.updates(id)
+client.references.create({})
+client.references.delete(id)
+#+end_src
+
+**** Pagination
+Use the =page= query parameter to set the current page (default: 1)\\
+Use the =per_page= query parameter to set a per page limit (default: 25)
+
+#+begin_src ruby
+client.references.list(per_page: 10, page:2)
+#+end_src
+
+**** Create Reference with Auto Carrier Identification.
+  Add container reference for update tracking without a carrier code. To do this, provide only a container_id with in the body request payload. Please note, it will always be faster and more accurate to provide a carrier code when you can.\\
+  VIZION API will periodically check for updates and send updates via HTTP POST to the provided =callback_url= parameter.
+
+  *Raw body*
+ #+begin_src json
+{
+    "container_id": "CMAU4049810",
+    "callback_url": "https://yourdomain.com/webhook"
+}
+ #+end_src
+
+ *Ruby way*
+#+begin_src ruby
+client.references.create(container_id: "CMAU4049810", callback_url: "https://yourdomain.com/webhook")
+#+end_src
+
+**** Create Reference with Carrier Code
+  Add container reference for update tracking using a carrier code.
+
+  *Raw body*
+ #+begin_src json
+{
+    "container_id": "CAIU4482704",
+    "carrier_code": "HDMU",
+    "callback_url": "https://yourdomain.com/webhook"
+}
+ #+end_src
+
+ *Ruby way*
+#+begin_src ruby
+client.references.create(container_id: "CMAU4049810", carrier_code: "HDMU", callback_url: "https://yourdomain.com/webhook")
+#+end_src
+
+If no callback_url parameter is provided, you will need to fetch status updates from the reference_updates action.
+
+** Contributing
+
+Everyone is encouraged to help improve this project. Bug reports and pull requests are welcome at [[https://github.com/vertilux/vizion/pulls]].
+Feel free to open an [[https://github.com/lepepe/sagekit/issues][issue]] to get feedback on your idea before spending too much time on it.
+
+** License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

@@ -1,0 +1,91 @@
+/* Read the Org custom CSS */
+
+/* Body andHeaders */
+h4,h5,h6 {
+    color:#6272a4;
+    font-weight:300;
+}
+
+body{
+    background:#282A36;
+    color:#404040;
+    font-family:"Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-weight:normal;
+    margin:0;
+    min-height:100%;
+    overflow-x:hidden;
+}
+
+/* Code block */
+.codeblock,pre.src,#content .literal-block{
+    border:1px solid #e1e4e5;
+    padding:12px;
+    overflow-x:auto;
+    background:#282A36;
+    margin:1px 0 24px 0;
+    color: #F8F8F2;
+}
+
+/* Links */
+a{
+    color:#6272a4;
+    text-decoration:none;
+    cursor:pointer}
+
+a:hover,a:active{
+    outline:0;
+}
+
+a:hover{
+    color:#bd93f9}
+
+a:visited{
+    color:#9B59B6}
+
+/* Table of Content */
+#table-of-contents{
+    position:fixed;
+    top:0;
+    left:0;
+    width:300px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    height:100%;
+    background:#44475A;
+    z-index:200;
+    scrollbar-base-color: #1F1D1D;
+    scrollbar-arrow-color: #b3b3b3;
+    scrollbar-shadow-color: #1F1D1D;
+    scrollbar-track-color : #343131;
+}
+
+#table-of-contents h2{
+    z-index:200;
+    background-color:#282A36;
+    text-align:center;
+    padding:0.809em;
+    display:block;
+    color:#fcfcfc;
+    font-size: 100%;
+    margin-bottom:0.809em}
+
+/* Footer */
+#postamble .author {
+    font-size: 100%;
+    margin-bottom: 0px;
+}
+
+#postamble .date {
+    font-size: 90%;
+    margin-bottom: 0px;
+    color: #00f769;
+}
+
+.figure {
+    padding: 0;
+}
+
+.figure p {
+    text-align: left;
+    padding: 0;
+}

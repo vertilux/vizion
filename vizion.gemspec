@@ -10,15 +10,14 @@ Gem::Specification.new do |spec|
   spec.email         = ["jose.perez@vertilux.com"]
 
   spec.summary       = %q{Client library Vizion API.}
-  spec.description   = %q{Clinet library Vizion API.}
+  spec.description   = %q{Client library Vizion API.}
   spec.homepage      = "https://github.com/vertilux/vizion"
   spec.license       = "MIT"
+  spec.required_ruby_version = ">= 2.4.0"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    #spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/vertilux/vizion"
   else
@@ -35,8 +34,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 2.0.a"
-  spec.add_development_dependency "rake", "~> 10.5.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_dependency "httparty", "~> 0.18.1"
+  spec.add_dependency "faraday", "~> 0.9"
+  spec.add_dependency "faraday_middleware", "~> 0.14.0"
 end

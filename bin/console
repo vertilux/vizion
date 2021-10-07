@@ -9,6 +9,8 @@ require "vizion"
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
+#
+client = Vizion::Client.new(api_key: ENV["VIZION_API_KEY"])
 
 require "irb"
 IRB.start(__FILE__)

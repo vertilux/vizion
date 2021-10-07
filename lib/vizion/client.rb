@@ -1,28 +1,32 @@
-require "httparty"
-require "vizion/client/connection"
-require "vizion/client/carriers"
-require "vizion/client/references"
+require "faraday"
+require "faraday_middleware"
 
 module Vizion
   class Client
-    include HTTParty 
-    include Vizion::Client::Connection
-    include Vizion::Client::Carriers
-    include Vizion::Client::References
+    BASE_URL = "https://prod.vizionapi.com"
 
-    DEFAULT_TIMEOUT = 120
+    attr_reader :api_key, :adapter
 
-    base_uri "https://prod.vizionapi.com"
-    format :json
+    def initialize(api_key:, adapter: Faraday.default_adapter)
+      @api_key = api_key || ENV["VIZION_API_KEY"]
+      @adapter = adapter
+    end
 
-    def initialize(options = {})
-      @api_key = options[:api_key] || ENV["VIZION_API_KEY"]
-      @timeout = options[:timeout] || DEFAULT_TIMEOUT
+    def carriers
+      CarriersResource.new(self)
+    end
 
-      self.class.default_options.merge!(
-        headers: { 'X-Api-Key' => @api_key },
-        timeout: @timeout
-      )
+    def references
+      ReferencesResource.new(self)
+    end
+
+    def connection
+      @connection ||= Faraday.new do |con|
+        con.url_prefix = BASE_URL
+        con.request :json
+        con.response :json, content_type: "application/json"
+        con.adapter adapter
+      end
     end
   end
 end
