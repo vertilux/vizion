@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Client library Vizion API.}
   spec.description   = %q{Client library Vizion API.}
-  spec.homepage      = "https://github.com/vertilux/vizion"
+  spec.homepage      = "https://vertilux.github.io/vizion"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.4.0"
 
