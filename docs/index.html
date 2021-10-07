@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-10-06 Wed 22:29 -->
+<!-- 2021-10-07 Thu 10:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Vizion</title>
@@ -208,22 +208,23 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf8779f9">Installation</a></li>
-<li><a href="#org1013cde">Usage</a></li>
-<li><a href="#orgbc9c296">Resources</a>
+<li><a href="#org0ae419c">Installation</a></li>
+<li><a href="#org8179b49">Usage</a></li>
+<li><a href="#org8ce5a74">Resources</a>
 <ul>
-<li><a href="#org660d830">Carriers</a></li>
-<li><a href="#org6a7f07c">References</a>
+<li><a href="#orgaae61e2">Carriers</a></li>
+<li><a href="#orgd9e1967">References</a>
 <ul>
-<li><a href="#org2765593">Pagination</a></li>
-<li><a href="#org5746618">Create Reference with Auto Carrier Identification.</a></li>
-<li><a href="#org7ec6afa">Create Reference with Carrier Code</a></li>
+<li><a href="#orgd745add">Pagination</a></li>
+<li><a href="#org9171f37">Create Reference with Auto Carrier Identification.</a></li>
+<li><a href="#org12a76bf">Create Reference with Carrier Code</a></li>
+<li><a href="#orgf86bcd0">Milestones event names</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org4e26d3d">Contributing</a></li>
-<li><a href="#orga2bcbef">License</a></li>
+<li><a href="#org655bd3b">Contributing</a></li>
+<li><a href="#org0711850">License</a></li>
 </ul>
 </div>
 </div>
@@ -232,14 +233,14 @@ Vizion is a ruby gem client library for talking to <a href="https://docs.viziona
 </p>
 
 
-<div id="org797ad4d" class="figure">
+<div id="orgc7f19d4" class="figure">
 <p><img src="https://badge.fury.io/rb/vizion.svg" alt="vizion.svg" />
 </p>
 </div>
 
-<div id="outline-container-orgf8779f9" class="outline-2">
-<h2 id="orgf8779f9">Installation</h2>
-<div class="outline-text-2" id="text-orgf8779f9">
+<div id="outline-container-org0ae419c" class="outline-2">
+<h2 id="org0ae419c">Installation</h2>
+<div class="outline-text-2" id="text-org0ae419c">
 <p>
 Add this line to your application&rsquo;s Gemfile:
 </p>
@@ -266,9 +267,9 @@ Or install it yourself as:
 </div>
 </div>
 
-<div id="outline-container-org1013cde" class="outline-2">
-<h2 id="org1013cde">Usage</h2>
-<div class="outline-text-2" id="text-org1013cde">
+<div id="outline-container-org8179b49" class="outline-2">
+<h2 id="org8179b49">Usage</h2>
+<div class="outline-text-2" id="text-org8179b49">
 <p>
 You&rsquo;ll need to generate an api key: <a href="https://vizionapi.com/sign-up">https://vizionapi.com/sign-up</a>
 Initialize client and making request:
@@ -283,13 +284,13 @@ client.carriers
 </div>
 </div>
 
-<div id="outline-container-orgbc9c296" class="outline-2">
-<h2 id="orgbc9c296">Resources</h2>
-<div class="outline-text-2" id="text-orgbc9c296">
+<div id="outline-container-org8ce5a74" class="outline-2">
+<h2 id="org8ce5a74">Resources</h2>
+<div class="outline-text-2" id="text-org8ce5a74">
 </div>
-<div id="outline-container-org660d830" class="outline-3">
-<h3 id="org660d830">Carriers</h3>
-<div class="outline-text-3" id="text-org660d830">
+<div id="outline-container-orgaae61e2" class="outline-3">
+<h3 id="orgaae61e2">Carriers</h3>
+<div class="outline-text-3" id="text-orgaae61e2">
 <p>
 List of all supported carriers, to view the list <a href="https://www.notion.so/vizionapi/afa65e3d79fb4a33bc5ce5c331576668?v=a7543be9963441b8aa1ad33962774b85">click here</a>.
 </p>
@@ -304,9 +305,9 @@ List of all supported carriers, to view the list <a href="https://www.notion.so/
 </div>
 </div>
 
-<div id="outline-container-org6a7f07c" class="outline-3">
-<h3 id="org6a7f07c">References</h3>
-<div class="outline-text-3" id="text-org6a7f07c">
+<div id="outline-container-orgd9e1967" class="outline-3">
+<h3 id="orgd9e1967">References</h3>
+<div class="outline-text-3" id="text-orgd9e1967">
 <p>
 <b>Actions supported</b>:
 </p>
@@ -320,9 +321,9 @@ client.references.delete(id)
 </div>
 </div>
 
-<div id="outline-container-org2765593" class="outline-4">
-<h4 id="org2765593">Pagination</h4>
-<div class="outline-text-4" id="text-org2765593">
+<div id="outline-container-orgd745add" class="outline-4">
+<h4 id="orgd745add">Pagination</h4>
+<div class="outline-text-4" id="text-orgd745add">
 <p>
 Use the <code>page</code> query parameter to set the current page (default: 1)<br />
 Use the <code>per_page</code> query parameter to set a per page limit (default: 25)
@@ -335,11 +336,11 @@ Use the <code>per_page</code> query parameter to set a per page limit (default: 
 </div>
 </div>
 
-<div id="outline-container-org5746618" class="outline-4">
-<h4 id="org5746618">Create Reference with Auto Carrier Identification.</h4>
-<div class="outline-text-4" id="text-org5746618">
+<div id="outline-container-org9171f37" class="outline-4">
+<h4 id="org9171f37">Create Reference with Auto Carrier Identification.</h4>
+<div class="outline-text-4" id="text-org9171f37">
 <p>
-Add container reference for update tracking without a carrier code. To do this, provide only a container<sub>id</sub> with in the body request payload. Please note, it will always be faster and more accurate to provide a carrier code when you can.<br />
+Add container reference for update tracking without a carrier code. To do this, provide only a <code>container_id</code> with in the body request payload. Please note, it will always be faster and more accurate to provide a carrier code when you can.<br />
 VIZION API will periodically check for updates and send updates via HTTP POST to the provided <code>callback_url</code> parameter.
 </p>
 
@@ -364,9 +365,9 @@ VIZION API will periodically check for updates and send updates via HTTP POST to
 </div>
 </div>
 
-<div id="outline-container-org7ec6afa" class="outline-4">
-<h4 id="org7ec6afa">Create Reference with Carrier Code</h4>
-<div class="outline-text-4" id="text-org7ec6afa">
+<div id="outline-container-org12a76bf" class="outline-4">
+<h4 id="org12a76bf">Create Reference with Carrier Code</h4>
+<div class="outline-text-4" id="text-org12a76bf">
 <p>
 Add container reference for update tracking using a carrier code.
 </p>
@@ -396,12 +397,343 @@ If no callback<sub>url</sub> parameter is provided, you will need to fetch statu
 </p>
 </div>
 </div>
+
+<div id="outline-container-orgf86bcd0" class="outline-4">
+<h4 id="orgf86bcd0">Milestones event names</h4>
+<div class="outline-text-4" id="text-orgf86bcd0">
+<p>
+Here you can find information on how Vizion standardizes event names.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Milestones Event Name</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Available for release / delivery</td>
+<td class="org-left">Released by carrier</td>
+</tr>
+
+<tr>
+<td class="org-left">Barge arrived</td>
+<td class="org-left">Container has been moved by barge to next point of transit</td>
+</tr>
+
+<tr>
+<td class="org-left">Barge departed</td>
+<td class="org-left">Barge is en route to next destination</td>
+</tr>
+
+<tr>
+<td class="org-left">Carrier release</td>
+<td class="org-left">Cargo can be picked up by consignee</td>
+</tr>
+
+<tr>
+<td class="org-left">Customs release</td>
+<td class="org-left">Container has cleared customs</td>
+</tr>
+
+<tr>
+<td class="org-left">Delivered</td>
+<td class="org-left">Container has been delivered to destination</td>
+</tr>
+
+<tr>
+<td class="org-left">Discharged from barge</td>
+<td class="org-left">Container is no longer on the barge</td>
+</tr>
+
+<tr>
+<td class="org-left">Discharged from feeder</td>
+<td class="org-left">Container is no longer on the feeder will move by next mode of transportation</td>
+</tr>
+
+<tr>
+<td class="org-left">Discharged from rail</td>
+<td class="org-left">Container is no longer on the rail</td>
+</tr>
+
+<tr>
+<td class="org-left">Discharged from truck</td>
+<td class="org-left">Container is no longer on the truck</td>
+</tr>
+
+<tr>
+<td class="org-left">Discharged from vessel</td>
+<td class="org-left">Container is no longer on the vessel</td>
+</tr>
+
+<tr>
+<td class="org-left">Discharged from vessel at transshipment port</td>
+<td class="org-left">Container is no longer on the vessel and is in transit to the next mode of transport</td>
+</tr>
+
+<tr>
+<td class="org-left">Discharged transshipment</td>
+<td class="org-left">Container is no longer on the vessel</td>
+</tr>
+
+<tr>
+<td class="org-left">Estimated arrival at destination</td>
+<td class="org-left">Estimated time vessel will arrive at destination port</td>
+</tr>
+
+<tr>
+<td class="org-left">Estimated Time of Arrival</td>
+<td class="org-left">Estimated time vessel will arrive at destination port</td>
+</tr>
+
+<tr>
+<td class="org-left">Feeder arrived</td>
+<td class="org-left">Feeder has arrived at port</td>
+</tr>
+
+<tr>
+<td class="org-left">Feeder departed</td>
+<td class="org-left">Feeder has departed port</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate in</td>
+<td class="org-left">Container is checked in at either port of origin or destination</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate in at destination port</td>
+<td class="org-left">Container is checked in at destination port</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate in at inland destination</td>
+<td class="org-left">Container is checked in at an inland location</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate in at origin port</td>
+<td class="org-left">Container is checked in at port of origin</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate in empty</td>
+<td class="org-left">Container is returned empty after being used - goods are emptied and container is returned</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate in empty return</td>
+<td class="org-left">Container is returned empty after being used - goods are emptied and container is returned</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate in full</td>
+<td class="org-left">Container has been loaded and is ready to board the vessel</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate out</td>
+<td class="org-left">Container has left the terminal</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate out empty</td>
+<td class="org-left">Empty container has been picked up. This starts the clock for detention (equipment)</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate out from destination port</td>
+<td class="org-left">Container has left the destination port</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate out from origin port</td>
+<td class="org-left">Container has left the terminal</td>
+</tr>
+
+<tr>
+<td class="org-left">Gate out to consignee</td>
+<td class="org-left">Consignee (person consigner shipped goods to) picked up the container</td>
+</tr>
+
+<tr>
+<td class="org-left">Loaded</td>
+<td class="org-left">Container is loaded on the vessel</td>
+</tr>
+
+<tr>
+<td class="org-left">Loaded on barge</td>
+<td class="org-left">Container is loaded on the barge</td>
+</tr>
+
+<tr>
+<td class="org-left">Loaded on feeder</td>
+<td class="org-left">Container is loaded on the feeder</td>
+</tr>
+
+<tr>
+<td class="org-left">Loaded on rail</td>
+<td class="org-left">Container is on the rail</td>
+</tr>
+
+<tr>
+<td class="org-left">Loaded on rail at destination port</td>
+<td class="org-left">Container is on the rail at the destination port</td>
+</tr>
+
+<tr>
+<td class="org-left">Loaded on truck</td>
+<td class="org-left">Container is on the truck</td>
+</tr>
+
+<tr>
+<td class="org-left">Loaded on vessel</td>
+<td class="org-left">Container is on the vessel</td>
+</tr>
+
+<tr>
+<td class="org-left">Loaded on vessel at origin port</td>
+<td class="org-left">Container is on the vessel at origin</td>
+</tr>
+
+<tr>
+<td class="org-left">Loaded on vessel at transshipment port</td>
+<td class="org-left">Container has moved to transshipment port and is loaded on the vessel</td>
+</tr>
+
+<tr>
+<td class="org-left">Loaded transshipment</td>
+<td class="org-left">Container has moved to transshipment port and is loaded on the vessel</td>
+</tr>
+
+<tr>
+<td class="org-left">Picked up by customer</td>
+<td class="org-left">The customer has picked up the container</td>
+</tr>
+
+<tr>
+<td class="org-left">Rail arrived</td>
+<td class="org-left">Container is on the rail and has arrived at next point</td>
+</tr>
+
+<tr>
+<td class="org-left">Rail demurrage notice</td>
+<td class="org-left">Rail company has issued a notice regarding demurrage</td>
+</tr>
+
+<tr>
+<td class="org-left">Rail departed</td>
+<td class="org-left">Container is on the rail and has departed</td>
+</tr>
+
+<tr>
+<td class="org-left">Rail departed from inland origin</td>
+<td class="org-left">Container is on the rail and has departed from the inland origin</td>
+</tr>
+
+<tr>
+<td class="org-left">Stripping empty</td>
+<td class="org-left">Cargo has been removed from container and has been cleaned</td>
+</tr>
+
+<tr>
+<td class="org-left">Stuffing</td>
+<td class="org-left">Container is being loaded with cargo, usually at the warehouse or by truck at the terminal</td>
+</tr>
+
+<tr>
+<td class="org-left">Transshipment delay</td>
+<td class="org-left">Container is experiencing delays at the transshipment port</td>
+</tr>
+
+<tr>
+<td class="org-left">Truck arrived</td>
+<td class="org-left">Truck is at the terminal to pick up container</td>
+</tr>
+
+<tr>
+<td class="org-left">Truck delivery scheduled</td>
+<td class="org-left">Truck has made appointment to deliver container</td>
+</tr>
+
+<tr>
+<td class="org-left">Truck departed</td>
+<td class="org-left">Truck has departed the terminal</td>
+</tr>
+
+<tr>
+<td class="org-left">Truck pickup scheduled</td>
+<td class="org-left">Truck has scheduled an appointment with the terminal to pick up the container</td>
+</tr>
+
+<tr>
+<td class="org-left">Vessel arrival</td>
+<td class="org-left">Vessel has arrived at the port</td>
+</tr>
+
+<tr>
+<td class="org-left">Vessel arrival at transshipment port</td>
+<td class="org-left">Vessel has arrived at the transshipment port</td>
+</tr>
+
+<tr>
+<td class="org-left">Vessel arrived</td>
+<td class="org-left">Vessel has arrived at the port</td>
+</tr>
+
+<tr>
+<td class="org-left">Vessel arrived at destination port</td>
+<td class="org-left">Vessel has arrived at the destination port</td>
+</tr>
+
+<tr>
+<td class="org-left">Vessel arrived at origin port</td>
+<td class="org-left">Vessel has arrived at the origin port</td>
+</tr>
+
+<tr>
+<td class="org-left">Vessel berthed in port</td>
+<td class="org-left">Vessel has berthed or arrived at designated port at the terminal. Container should be available for pick up</td>
+</tr>
+
+<tr>
+<td class="org-left">Vessel departed</td>
+<td class="org-left">Vessel has departed the port</td>
+</tr>
+
+<tr>
+<td class="org-left">Vessel departure from origin port</td>
+<td class="org-left">Vessel has departed from the origin port</td>
+</tr>
+
+<tr>
+<td class="org-left">Vessel departure from transshipment port</td>
+<td class="org-left">Vessel has departed from the transshipment port</td>
+</tr>
+
+<tr>
+<td class="org-left">VGM received</td>
+<td class="org-left">VGM (verified gross mass) paperwork is in order</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org4e26d3d" class="outline-2">
-<h2 id="org4e26d3d">Contributing</h2>
-<div class="outline-text-2" id="text-org4e26d3d">
+<div id="outline-container-org655bd3b" class="outline-2">
+<h2 id="org655bd3b">Contributing</h2>
+<div class="outline-text-2" id="text-org655bd3b">
 <p>
 Everyone is encouraged to help improve this project. Bug reports and pull requests are welcome at <a href="https://github.com/vertilux/vizion/pulls">https://github.com/vertilux/vizion/pulls</a>.
 Feel free to open an <a href="https://github.com/lepepe/sagekit/issues">issue</a> to get feedback on your idea before spending too much time on it.
@@ -409,9 +741,9 @@ Feel free to open an <a href="https://github.com/lepepe/sagekit/issues">issue</a
 </div>
 </div>
 
-<div id="outline-container-orga2bcbef" class="outline-2">
-<h2 id="orga2bcbef">License</h2>
-<div class="outline-text-2" id="text-orga2bcbef">
+<div id="outline-container-org0711850" class="outline-2">
+<h2 id="org0711850">License</h2>
+<div class="outline-text-2" id="text-org0711850">
 <p>
 The gem is available as open source under the terms of the [MIT License](<a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a>).
 </p>
@@ -420,7 +752,7 @@ The gem is available as open source under the terms of the [MIT License](<a href
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jose Perez</p>
-<p class="date">Created: 2021-10-06 Wed 22:29</p>
+<p class="date">Created: 2021-10-07 Thu 10:16</p>
 </div>
 </body>
 </html>

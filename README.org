@@ -67,7 +67,7 @@ client.references.list(per_page: 10, page:2)
 #+end_src
 
 **** Create Reference with Auto Carrier Identification.
-  Add container reference for update tracking without a carrier code. To do this, provide only a container_id with in the body request payload. Please note, it will always be faster and more accurate to provide a carrier code when you can.\\
+  Add container reference for update tracking without a carrier code. To do this, provide only a =container_id= with in the body request payload. Please note, it will always be faster and more accurate to provide a carrier code when you can.\\
   VIZION API will periodically check for updates and send updates via HTTP POST to the provided =callback_url= parameter.
 
   *Raw body*
@@ -101,6 +101,73 @@ client.references.create(container_id: "CMAU4049810", carrier_code: "HDMU", call
 #+end_src
 
 If no callback_url parameter is provided, you will need to fetch status updates from the reference_updates action.
+
+**** Milestones event names
+Here you can find information on how Vizion standardizes event names.
+
+| Milestones Event Name                        | Description                                                                                                 |
+|----------------------------------------------+-------------------------------------------------------------------------------------------------------------|
+| Available for release / delivery             | Released by carrier                                                                                         |
+| Barge arrived                                | Container has been moved by barge to next point of transit                                                  |
+| Barge departed                               | Barge is en route to next destination                                                                       |
+| Carrier release                              | Cargo can be picked up by consignee                                                                         |
+| Customs release                              | Container has cleared customs                                                                               |
+| Delivered                                    | Container has been delivered to destination                                                                 |
+| Discharged from barge                        | Container is no longer on the barge                                                                         |
+| Discharged from feeder                       | Container is no longer on the feeder will move by next mode of transportation                               |
+| Discharged from rail                         | Container is no longer on the rail                                                                          |
+| Discharged from truck                        | Container is no longer on the truck                                                                         |
+| Discharged from vessel                       | Container is no longer on the vessel                                                                        |
+| Discharged from vessel at transshipment port | Container is no longer on the vessel and is in transit to the next mode of transport                        |
+| Discharged transshipment                     | Container is no longer on the vessel                                                                        |
+| Estimated arrival at destination             | Estimated time vessel will arrive at destination port                                                       |
+| Estimated Time of Arrival                    | Estimated time vessel will arrive at destination port                                                       |
+| Feeder arrived                               | Feeder has arrived at port                                                                                  |
+| Feeder departed                              | Feeder has departed port                                                                                    |
+| Gate in                                      | Container is checked in at either port of origin or destination                                             |
+| Gate in at destination port                  | Container is checked in at destination port                                                                 |
+| Gate in at inland destination                | Container is checked in at an inland location                                                               |
+| Gate in at origin port                       | Container is checked in at port of origin                                                                   |
+| Gate in empty                                | Container is returned empty after being used - goods are emptied and container is returned                  |
+| Gate in empty return                         | Container is returned empty after being used - goods are emptied and container is returned                  |
+| Gate in full                                 | Container has been loaded and is ready to board the vessel                                                  |
+| Gate out                                     | Container has left the terminal                                                                             |
+| Gate out empty                               | Empty container has been picked up. This starts the clock for detention (equipment)                         |
+| Gate out from destination port               | Container has left the destination port                                                                     |
+| Gate out from origin port                    | Container has left the terminal                                                                             |
+| Gate out to consignee                        | Consignee (person consigner shipped goods to) picked up the container                                       |
+| Loaded                                       | Container is loaded on the vessel                                                                           |
+| Loaded on barge                              | Container is loaded on the barge                                                                            |
+| Loaded on feeder                             | Container is loaded on the feeder                                                                           |
+| Loaded on rail                               | Container is on the rail                                                                                    |
+| Loaded on rail at destination port           | Container is on the rail at the destination port                                                            |
+| Loaded on truck                              | Container is on the truck                                                                                   |
+| Loaded on vessel                             | Container is on the vessel                                                                                  |
+| Loaded on vessel at origin port              | Container is on the vessel at origin                                                                        |
+| Loaded on vessel at transshipment port       | Container has moved to transshipment port and is loaded on the vessel                                       |
+| Loaded transshipment                         | Container has moved to transshipment port and is loaded on the vessel                                       |
+| Picked up by customer                        | The customer has picked up the container                                                                    |
+| Rail arrived                                 | Container is on the rail and has arrived at next point                                                      |
+| Rail demurrage notice                        | Rail company has issued a notice regarding demurrage                                                        |
+| Rail departed                                | Container is on the rail and has departed                                                                   |
+| Rail departed from inland origin             | Container is on the rail and has departed from the inland origin                                            |
+| Stripping empty                              | Cargo has been removed from container and has been cleaned                                                  |
+| Stuffing                                     | Container is being loaded with cargo, usually at the warehouse or by truck at the terminal                  |
+| Transshipment delay                          | Container is experiencing delays at the transshipment port                                                  |
+| Truck arrived                                | Truck is at the terminal to pick up container                                                               |
+| Truck delivery scheduled                     | Truck has made appointment to deliver container                                                             |
+| Truck departed                               | Truck has departed the terminal                                                                             |
+| Truck pickup scheduled                       | Truck has scheduled an appointment with the terminal to pick up the container                               |
+| Vessel arrival                               | Vessel has arrived at the port                                                                              |
+| Vessel arrival at transshipment port         | Vessel has arrived at the transshipment port                                                                |
+| Vessel arrived                               | Vessel has arrived at the port                                                                              |
+| Vessel arrived at destination port           | Vessel has arrived at the destination port                                                                  |
+| Vessel arrived at origin port                | Vessel has arrived at the origin port                                                                       |
+| Vessel berthed in port                       | Vessel has berthed or arrived at designated port at the terminal. Container should be available for pick up |
+| Vessel departed                              | Vessel has departed the port                                                                                |
+| Vessel departure from origin port            | Vessel has departed from the origin port                                                                    |
+| Vessel departure from transshipment port     | Vessel has departed from the transshipment port                                                             |
+| VGM received                                 | VGM (verified gross mass) paperwork is in order                                                             |
 
 ** Contributing
 
